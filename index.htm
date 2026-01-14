@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 DeepSeek Admin - The Modern Database Tool</title>
+    <style>
+        :root {
+            --primary-blue: #5686FE;
+            --dark-bg: #0a0a0a;
+            --light-bg: #f8fafc;
+            --card-dark: #1a1a1a;
+            --card-light: #ffffff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--dark-bg);
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Header */
+        .hero {
+            text-align: center;
+            padding: 6rem 1rem 4rem;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #5686FE, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+            border: 2px solid var(--primary-blue);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(86, 134, 254, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #2a2a2a;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary-blue);
+            background: rgba(86, 134, 254, 0.1);
+        }
+        
+        /* Features */
+        .features {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--card-dark);
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        /* Demo */
+        .demo {
+            padding: 5rem 0;
+            background: #111111;
+            text-align: center;
+        }
+        
+        .demo-box {
+            background: var(--card-dark);
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            border-top: 1px solid #2a2a2a;
+            text-align: center;
+            color: #666;
+        }
+        
+        .donation {
+            background: rgba(86, 134, 254, 0.1);
+            border: 1px solid rgba(86, 134, 254, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 600px;
+        }
+        
+        @media (max-width: 768px) {
+            .logo { font-size: 3rem; }
+            .section-title { font-size: 2rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="logo">DeepSeek Admin</h1>
+            <p class="tagline">
+                The revolutionary database administration tool that finally replaces phpMyAdmin. 
+                Modern, fast, and actually pleasant to use.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="https://deepseek.iohub.pro" class="btn btn-primary">
+                    🔥 Live Demo
+                </a>
+                <a href="https://github.com/deepseekadmin/deepseekadmin" class="btn btn-secondary">
+                    ⭐ Star on GitHub
+                </a>
+                <a href="#download" class="btn btn-secondary">
+                    ⬇️ Download v0.1.0
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why It's Better</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Modern UI</h3>
+                    <p>No more interfaces from 1999. Clean, dark-themed design that's actually pleasant to look at and use all day.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Multi-Database</h3>
+                    <p>MySQL, PostgreSQL (with Vector extension support), SQLite – all in one unified, intuitive interface.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Blazing Fast</h3>
+                    <p>Optimized performance with PWA capabilities. Work offline, install as a native app on any device.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⌨️</div>
+                    <h3>Keyboard First</h3>
+                    <p>Designed for power users. Full keyboard shortcuts, quick search, and efficient workflows.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Inline Editing</h3>
+                    <p>Edit data directly in tables like Excel. Bulk operations, smart filters, and real-time previews.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Private</h3>
+                    <p>No telemetry, no data collection. Your database connections stay on your machine. Session encryption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <h2 class="section-title">Try It Yourself</h2>
+            <p style="font-size: 1.2rem; color: #a0a0a0; margin-bottom: 2rem;">
+                Experience the future of database administration
+            </p>
+            
+            <div class="demo-box">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: white;">🚀 Instant Online Demo</h3>
+                <p style="margin-bottom: 2rem; color: #a0a0a0;">
+                    No installation required. Test all features with our live demo database.
+                </p>
+                <a href="https://deepseek.iohub.pro" class="btn btn-primary" style="font-size: 1.2rem; padding: 1rem 3rem;">
+                    Launch Live Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="features" id="download">
+        <div class="container">
+            <h2 class="section-title">Get Started</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">📦</div>
+                    <h3>One-Click Install</h3>
+                    <p style="margin-bottom: 1.5rem;">Extract and run. No dependencies, no complicated setup.</p>
+                    <a href="#" class="btn btn-secondary" style="width: auto; padding: 0.75rem 1.5rem;">
+                        Download ZIP
+                    </a>
+                </div>
+                
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">🐙</div>
+                    <h3>GitHub Repository</h3>
+                    <p style="margin-bottom: 1.5rem;">Clone the repo, contribute, or create issues. Fully open source.</p>
+                    <a href="https://github.com/deepseekadmin/deepseekadmin" class="btn btn-secondary" style="width: auto; padding: 0.75rem 1.5rem;">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="features">
+        <div class="container">
+            <div class="donation">
+                <h2 style="color: white; margin-bottom: 1rem;">❤️ Support the Project</h2>
+                <p style="color: #a0a0a0; margin-bottom: 1.5rem;">
+                    DeepSeek Admin is and will always be 100% FREE. No subscriptions, no paywalls, no bullshit.
+                    If this tool saves you time or makes your life easier, consider supporting its development.
+                </p>
+                <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">💰 Direct Donation</h3>
+                    <p style="margin-bottom: 1rem;">
+                        <a href="https://pay.cloudtips.ru/p/74d49304" style="color: white; text-decoration: underline;">
+                            https://pay.cloudtips.ru/p/74d49304
+                        </a>
+                    </p>
+                    <p style="font-size: 0.9rem; color: #888;">
+                        Every donation = more features, less bugs, happier developers!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <strong>DeepSeek Admin</strong> · Made with ❤️ by Stas Doroshenko & DeepSeek AI · 
+                <a href="https://github.com/deepseekadmin/deepseekadmin/blob/main/LICENSE" style="color: #5686FE;">
+                    GNU GPL v2 License
+                </a>
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                © 2024 DeepSeek Admin Project · This is the future of database tools.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add subtle animation to feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Initialize all feature cards with fade-in effect
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
